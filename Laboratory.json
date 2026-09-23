@@ -1,0 +1,45 @@
+{
+  "Name": "NewDatabase",
+  "Tables": [
+    {
+      "Name": "Laboratory",
+      "Columns": [
+        {
+          "Name": "DeviceCode",
+          "Type": 0
+        },
+        {
+          "Name": "Signal",
+          "Type": 5
+        },
+        {
+          "Name": "Satus",
+          "Type": 2
+        }
+      ],
+      "Rows": []
+    },
+    {
+      "Name": "Devices",
+      "Columns": [
+        {
+          "Name": "SerialCode",
+          "Type": 0
+        },
+        {
+          "Name": "ImpedanceVal",
+          "Type": 4
+        },
+        {
+          "Name": "Frequency",
+          "Type": 5
+        },
+        {
+          "Name": "StatusChar",
+          "Type": 2
+        }
+      ],
+      "Rows": []
+    }
+  ]
+}

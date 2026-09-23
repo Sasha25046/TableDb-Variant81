@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:models="clr-namespace:TableDbEngine.Models;assembly=TableDbEngine"
+        x:Class="TableDbDesktop.Dialogs.CreateTableDialog"
+        Title="Нова таблиця" Width="440" Height="540"
+        WindowStartupLocation="CenterOwner">
+    <DockPanel Margin="15">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,12,0,0">
+            <Button Content="Скасувати" Click="Cancel_Click" Width="90" HorizontalContentAlignment="Center"/>
+            <Button Content="Створити" Click="Ok_Click" Width="100" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+
+        <TextBlock x:Name="ErrorText" DockPanel.Dock="Bottom" Foreground="Red" TextWrapping="Wrap" Margin="0,5,0,0"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Spacing="8">
+                <TextBlock Text="Назва таблиці:" FontWeight="Bold"/>
+                <TextBox x:Name="TableNameTextBox"/>
+
+                <TextBlock Text="Колонки:" FontWeight="Bold" Margin="0,6,0,0"/>
+                <ListBox x:Name="ColumnsListBox" Height="110">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="models:Column">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Type}" Foreground="Gray"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Content="- Видалити обрану колонку" Click="RemoveColumn_Click"/>
+
+                <TextBlock Text="Додати колонку:" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                <TextBox x:Name="NewColumnNameTextBox" PlaceholderText="Назва колонки"/>
+                <ComboBox x:Name="ColumnTypeComboBox" HorizontalAlignment="Stretch"/>
+                <Button Content="+ Додати колонку" Click="AddColumn_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

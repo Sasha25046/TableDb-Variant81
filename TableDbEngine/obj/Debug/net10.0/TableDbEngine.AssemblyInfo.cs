@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TableDbEngine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+285da1491d0d5d7d2d487953db006b43924c8856")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5885c2169293887d39cab0839794f1b3cb5cc97a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TableDbEngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TableDbEngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

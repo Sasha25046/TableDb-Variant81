@@ -1,0 +1,58 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TableDbDesktop.MainWindow"
+        Title="Таблична СКБД — Варіант 81" Width="1080" Height="700"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel Margin="10">
+        <Menu DockPanel.Dock="Top" Margin="0,0,0,10">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Створити нову БД" Click="NewDatabase_Click"/>
+                <MenuItem Header="Відкрити БД (JSON)..." Click="OpenDatabase_Click"/>
+                <MenuItem Header="Зберегти БД (JSON)" Click="SaveDatabase_Click"/>
+                <MenuItem Header="Зберегти БД як (JSON)..." Click="SaveAsDatabase_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Border DockPanel.Dock="Left" Width="230" Margin="0,0,10,0" BorderBrush="#CCCCCC" BorderThickness="1" Padding="8" CornerRadius="4">
+            <DockPanel>
+                <TextBlock Text="Таблиці в базі:" FontWeight="Bold" DockPanel.Dock="Top" Margin="0,0,0,8"/>
+                <StackPanel DockPanel.Dock="Bottom" Spacing="6" Margin="0,8,0,0">
+                    <Button Content="+ Створити таблицю" Click="AddTable_Click" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                    <Button Content="- Видалити таблицю" Click="DeleteTable_Click" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                </StackPanel>
+                <ListBox x:Name="TablesListBox" SelectionChanged="TablesListBox_SelectionChanged"/>
+            </DockPanel>
+        </Border>
+
+        <Border DockPanel.Dock="Top" Margin="0,0,0,10" Background="#F8F9FA" Padding="8" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="4">
+            <StackPanel Spacing="8">
+                <WrapPanel Orientation="Horizontal">
+                    <Button Content="+ Додати колонку" Click="AddColumn_Click" Margin="0,0,6,0"/>
+                    <Button Content="✎ Редагувати колонку" Click="EditColumn_Click" Margin="0,0,6,0"/>
+                    <Button Content="- Видалити колонку" Click="DeleteColumn_Click" Margin="0,0,14,0"/>
+                    <Button Content="+ Додати рядок" Click="AddRow_Click" Margin="0,0,6,0"/>
+                    <Button Content="✎ Редагувати рядок" Click="EditRow_Click" Margin="0,0,6,0"/>
+                    <Button Content="- Видалити рядок" Click="DeleteRow_Click" Margin="0,0,6,0"/>
+                </WrapPanel>
+
+                <Border Background="#FFFFFF" Padding="6" CornerRadius="3" BorderBrush="#E5E5E5" BorderThickness="1">
+                    <WrapPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="Пошук за шаблоном:" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+                        <TextBlock Text="Колонка:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                        <ComboBox x:Name="SearchColumnComboBox" Width="140" Margin="0,0,10,0"/>
+
+                        <TextBlock Text="Шаблон:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                        <TextBox x:Name="PatternTextBox" Width="130" Text="*+4i" Margin="0,0,10,0"/>
+
+                        <Button Content="Пошук" Click="Search_Click" Margin="0,0,6,0"/>
+                        <Button Content="Скинути" Click="ResetSearch_Click"/>
+                    </WrapPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <DataGrid x:Name="MainDataGrid" AutoGenerateColumns="False" CanUserResizeColumns="True"
+                  IsReadOnly="True" DoubleTapped="MainDataGrid_DoubleTapped"
+                  GridLinesVisibility="All" BorderThickness="1" BorderBrush="#DDDDDD"/>
+    </DockPanel>
+</Window>

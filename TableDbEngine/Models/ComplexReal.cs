@@ -21,7 +21,6 @@ namespace TableDbEngine.Models
 
             var cleaned = value.Replace(" ", "").Replace(',', '.');
 
-            // 1. Повна форма: a+bi або a-bi
             var fullRegex = new Regex(@"^([+-]?\d+(\.\d+)?)([+-])(\d*(\.\d+)?)i$");
             var matchFull = fullRegex.Match(cleaned);
             if (matchFull.Success)
@@ -36,7 +35,6 @@ namespace TableDbEngine.Models
                 return new ComplexReal(real, im);
             }
 
-            // 2. Чисто уявна форма: bi
             var pureImRegex = new Regex(@"^([+-]?\d*(\.\d+)?)i$");
             var matchIm = pureImRegex.Match(cleaned);
             if (matchIm.Success)
@@ -50,7 +48,6 @@ namespace TableDbEngine.Models
                 return new ComplexReal(0.0, im);
             }
 
-            // 3. Чисто дійсна форма: a
             if (double.TryParse(cleaned, NumberStyles.Float, CultureInfo.InvariantCulture, out double pureReal))
             {
                 return new ComplexReal(pureReal, 0.0);

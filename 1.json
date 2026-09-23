@@ -1,0 +1,147 @@
+{
+  "Name": "DefaultDatabase",
+  "Tables": [
+    {
+      "Name": "Sensors",
+      "Columns": [
+        {
+          "Name": "ID",
+          "Type": 0
+        },
+        {
+          "Name": "Impedance",
+          "Type": 4
+        },
+        {
+          "Name": "Voltage",
+          "Type": 5
+        },
+        {
+          "Name": "Tag",
+          "Type": 3
+        }
+      ],
+      "Rows": [
+        {
+          "Id": "79b3a9bb-a8af-40d7-94ea-0f751cef0d42",
+          "Cells": [
+            {
+              "RawValue": "1"
+            },
+            {
+              "RawValue": "3\u002B4i"
+            },
+            {
+              "RawValue": "12.5\u002B0.5i"
+            },
+            {
+              "RawValue": "Alpha"
+            }
+          ]
+        },
+        {
+          "Id": "4f636e51-3de5-4be4-97e8-cbd1d092852a",
+          "Cells": [
+            {
+              "RawValue": "2"
+            },
+            {
+              "RawValue": "-3\u002B4i"
+            },
+            {
+              "RawValue": "10.0-1.2i"
+            },
+            {
+              "RawValue": "Beta"
+            }
+          ]
+        },
+        {
+          "Id": "01869608-bb38-4a25-90b4-34e6648413c1",
+          "Cells": [
+            {
+              "RawValue": "3"
+            },
+            {
+              "RawValue": "3-2i"
+            },
+            {
+              "RawValue": "5.0\u002B0.0i"
+            },
+            {
+              "RawValue": "Gamma"
+            }
+          ]
+        },
+        {
+          "Id": "607ea11a-c95b-4970-a9d0-211b4764d151",
+          "Cells": [
+            {
+              "RawValue": "4"
+            },
+            {
+              "RawValue": "15\u002B4i"
+            },
+            {
+              "RawValue": "220.0\u002B15.3i"
+            },
+            {
+              "RawValue": "Delta"
+            }
+          ]
+        },
+        {
+          "Id": "bb70c645-a0b1-4746-85a5-365f92c121d8",
+          "Cells": [
+            {
+              "RawValue": "5"
+            },
+            {
+              "RawValue": "5i"
+            },
+            {
+              "RawValue": "-4.5i"
+            },
+            {
+              "RawValue": "Epsilon"
+            }
+          ]
+        },
+        {
+          "Id": "e2c4dc7a-b83f-4f0f-90e5-277d081fc2b6",
+          "Cells": [
+            {
+              "RawValue": "0"
+            },
+            {
+              "RawValue": "i"
+            },
+            {
+              "RawValue": "0.0\u002B0.0i"
+            },
+            {
+              "RawValue": ""
+            }
+          ]
+        },
+        {
+          "Id": "ee590e5f-7b0c-42e3-b307-067fe670e510",
+          "Cells": [
+            {
+              "RawValue": "0"
+            },
+            {
+              "RawValue": "0\u002B0i"
+            },
+            {
+              "RawValue": "0.0\u002B0.0i"
+            },
+            {
+              "RawValue": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
