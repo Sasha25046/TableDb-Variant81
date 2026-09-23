@@ -44,7 +44,6 @@ namespace TableDbEngine.Tests
 
             var searchService = new PatternSearchService();
 
-            // Пошук за wildcard зірочкою: закінчується на +4i
             var found = searchService.Search(table, "Impedance", "*+4i");
 
             Assert.Equal(3, found.Count);
@@ -52,7 +51,6 @@ namespace TableDbEngine.Tests
             Assert.Contains(found, r => r.Cells[1].RawValue == "Beta");
             Assert.Contains(found, r => r.Cells[1].RawValue == "Delta");
 
-            // Пошук з ? (рівно 1 символ)
             var singleCharMatch = searchService.Search(table, "Impedance", "?+4i");
             Assert.Single(singleCharMatch);
             Assert.Equal("Alpha", singleCharMatch[0].Cells[1].RawValue);
@@ -83,6 +81,17 @@ namespace TableDbEngine.Tests
             {
                 if (File.Exists(tempFile)) File.Delete(tempFile);
             }
+        }
+
+        [Fact]
+        public void Test5_TableSchema_RejectsIncompatibleColumnTypeChange()
+        {
+            var table = new Table("TestTable");
+            table.Columns.Add(new Column("Impedance", DataType.ComplexInteger));
+            table.AddRow(new Row(new[] { "3+4i" }));
+
+            bool canConvert = TypeValidator.Validate(table.Rows[0].Cells[0].RawValue, DataType.Integer);
+            Assert.False(canConvert);
         }
     }
 }
